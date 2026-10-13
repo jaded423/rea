@@ -28,6 +28,7 @@ Sizing: multi-verse is 2 vCPU / 3 GB RAM / 512 MB swap. Measured 2026-10-13: `re
 
 ## Daily use
 
+- CLI runs need the engine env on the command (the MCP registration carries it, the shell does not): `GHIDRA_INSTALL_DIR=$HOME/.local/opt/ghidra JAVA_HOME=$HOME/.local/opt/jdk21 rea analyze <file> --json`. Without it: `provider_unavailable`.
 - Health: `rea doctor --json` (providers, registration, skill). Dry-run any setup change: `rea setup --client claude_code --yes --dry-run --json`.
 - CLI: `rea --help`; native commands and snapshots → `docs/cli.md`. Inputs are untrusted downloads: keep each in its own empty dir, pass paths as arguments.
 - Update: bump the pin (`npm_config_prefix=$HOME/.local npm install --global rea-agents@<new>`), then `rea setup --client claude_code --yes`.
