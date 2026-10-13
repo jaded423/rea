@@ -24,7 +24,7 @@ First job: Super Collapse! II (GameHouse, 2002, Windows PE) for a Linux/iOS recr
 
 Why user-local: multi-verse holds no secrets and gets no sudo installs by default; everything here is removable with `rm -rf` and leaves pacman untouched. Switch to `pacman -S ghidra jdk21-openjdk` later if preferred (then re-run `rea setup` so the registration picks up the new `GHIDRA_INSTALL_DIR`).
 
-Sizing: multi-verse is 2 vCPU / 3 GB RAM / 512 MB swap. Fine for a 2002-era PE of a few MB. A big binary → run Ghidra on `lab` (VM103, 4 vCPU / 7 GB) instead; REA needs the engine local to it.
+Sizing: multi-verse is 2 vCPU / 3 GB RAM / 512 MB swap. Measured 2026-10-13: `rea analyze` on a 40 KB ELF (`/usr/bin/true`) = 37 s, peak +740 MB over idle (idle was 2.5 GB used with Claude sessions running), exit 0. A 2002-era PE of a few MB should fit; watch `free -m` on the first real run. A big binary → run Ghidra on `lab` (VM103, 4 vCPU / 7 GB) instead; REA needs the engine local to it.
 
 ## Daily use
 
